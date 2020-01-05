@@ -40,13 +40,6 @@ export default class ShowBookDetails extends Component {
     let BookItem = (
       <div>
         <table className="table table-hover table-dark">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Info</th>
-              <th scope="col">Details</th>
-            </tr>
-          </thead>
           <tbody>
             <tr>
               <th scope="row">1</th>
