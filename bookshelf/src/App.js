@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Route exact path="/" Component={ShowBookList}></Route>
+          <Route exact path="/" Component={ShowBookList} />
           <Route path="/create-book" component={CreateBook} />
           <Route path="/edit-book/:id" component={UpdateBookInfo} />
           <Route path="/show-book/:id" component={ShowBookDetails} />
