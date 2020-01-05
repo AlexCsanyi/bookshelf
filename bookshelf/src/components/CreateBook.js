@@ -12,7 +12,8 @@ export default class CreateBook extends Component {
       author: "",
       description: "",
       published_date: "",
-      publisher: ""
+      publisher: "",
+      src: ""
     };
   }
 
@@ -29,7 +30,8 @@ export default class CreateBook extends Component {
       author: this.state.author,
       description: this.state.description,
       published_date: this.state.published_date,
-      publisher: this.state.publisher
+      publisher: this.state.publisher,
+      src: this.state.src
     };
 
     axios
@@ -41,7 +43,8 @@ export default class CreateBook extends Component {
           author: "",
           description: "",
           published_date: "",
-          publisher: ""
+          publisher: "",
+          src: ""
         });
         this.props.history.push("/");
       })
@@ -112,8 +115,7 @@ export default class CreateBook extends Component {
 
                 <div className="form-group">
                   <input
-                    type="text"
-                    placeholder="Published Date"
+                    type="date"
                     name="published_date"
                     className="form-control"
                     value={this.state.published_date}
@@ -128,6 +130,17 @@ export default class CreateBook extends Component {
                     name="publisher"
                     className="form-control"
                     value={this.state.publisher}
+                    onChange={this.onChange}
+                  ></input>
+                </div>
+
+                <div className="form-group">
+                  <input
+                    type="text"
+                    placeholder="Image Link"
+                    name="src"
+                    className="form-control"
+                    value={this.state.src}
                     onChange={this.onChange}
                   ></input>
                 </div>

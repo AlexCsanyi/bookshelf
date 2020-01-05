@@ -12,7 +12,8 @@ export default class UpdateBookInfo extends Component {
       author: "",
       description: "",
       published_date: "",
-      publisher: ""
+      publisher: "",
+      src: ""
     };
   }
 
@@ -26,7 +27,8 @@ export default class UpdateBookInfo extends Component {
           author: res.data.author,
           description: res.data.description,
           published_date: res.data.published_date,
-          publisher: res.data.publisher
+          publisher: res.data.publisher,
+          src: res.data.src
         });
       })
       .catch(err => {
@@ -47,7 +49,8 @@ export default class UpdateBookInfo extends Component {
       author: this.state.author,
       description: this.state.description,
       published_date: this.state.published_date,
-      publisher: this.state.publisher
+      publisher: this.state.publisher,
+      src: this.state.src
     };
 
     axios
@@ -135,13 +138,24 @@ export default class UpdateBookInfo extends Component {
                 <label htmlFor="published_date">Published Date</label>
                 <input
                   type="date"
-                  placeholder="published_date"
                   name="published_date"
                   className="form-control"
                   value={this.state.published_date}
                   onChange={this.onChange}
                 />
               </div>
+              <div className="form-group">
+                <label htmlFor="src">Image link</label>
+                <input
+                  type="text"
+                  placeholder="Image link"
+                  name="src"
+                  className="form-control"
+                  value={this.state.src}
+                  onChange={this.onChange}
+                />
+              </div>
+
               <div className="form-group">
                 <label htmlFor="publisher">Publisher</label>
                 <input

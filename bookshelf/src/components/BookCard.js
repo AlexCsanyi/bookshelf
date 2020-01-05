@@ -1,16 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
+import pic from "./placeholder_img.jpg";
 
 const BookCard = props => {
   const book = props.book;
 
   return (
     <div className="card-container">
-      <img
-        src="https://commapress.co.uk/books/the-book-of-cairo/cairo-provisional-v3/image%2Fspan3"
-        alt=""
-      />
+      <img src={book.src === "" ? pic : book.src} alt="book cover" />
       <div className="desc">
         <h2>
           <Link to={`/show-book/${book._id}`}>{book.title}</Link>
