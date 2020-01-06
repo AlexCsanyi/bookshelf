@@ -1,7 +1,7 @@
 const express = require("express");
 const connectDB = require("./config/db");
 var cors = require("cors");
-const path = require('path')
+const path = require("path");
 
 // routes
 const books = require("./routes/api/books");
@@ -21,14 +21,17 @@ app.get("/", (req, res) => res.send("Hello World!"));
 // use Routes
 app.use("/api/books", books);
 
-const port = process.env.PORT || 8082;
+// Serve static assets if in production
 
-if(process.env.NODE_ENV === 'production') {
-    app.use(express.static( 'bookshelf/build' ));
+if (process.env.NODE_ENV === "production") {
+  // set static folder
+  app.use(express.static("bookshelf/build"));
 
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, 'bookshelf', 'build', 'index.html'))
-    })
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "bookshelf", "build", "index.html"));
+  });
 }
+
+const port = process.env.PORT || 8082;
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
