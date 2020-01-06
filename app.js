@@ -19,13 +19,13 @@ app.use(express.json({ extended: false }));
 app.get("/", (req, res) => res.send("Hello World!"));
 
 // use Routes
-app.use("/api/books", books);
+app.use("/", express.static(path.join(__dirname, "/bookshelf/build")));
 
 // Serve static assets if in production
 
 if (process.env.NODE_ENV === "production") {
   // set static folder
-  app.use(express.static("bookshelf/build"));
+  app.use("/", express.static(path.join(__dirname, "/bookshelf/build")));
 
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "bookshelf", "build", "index.html"));
