@@ -44,7 +44,8 @@
   margin: 0 auto;
   border-radius: 5px;
   overflow: hidden;
-  height: 650px;
+  height: 590px;
+  display: block;
 }
 
 .card-container img {
@@ -56,7 +57,12 @@
 }
 
 .desc {
+  display: block;
   padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  max-height: 150px;
 }
 
 .desc h2 {
