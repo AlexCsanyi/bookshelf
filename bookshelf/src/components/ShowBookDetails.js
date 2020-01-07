@@ -13,7 +13,7 @@ export default class ShowBookDetails extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8082/api/books/" + this.props.match.params.id)
+      .get("/api/books/" + this.props.match.params.id)
       .then(res => {
         this.setState({
           book: res.data
