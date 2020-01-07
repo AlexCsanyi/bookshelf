@@ -14,7 +14,7 @@ export default class CreateBook extends Component {
       published_date: "",
       publisher: "",
       src: "",
-      resource: ''
+      resource: ""
     };
   }
 
@@ -47,7 +47,7 @@ export default class CreateBook extends Component {
           published_date: "",
           publisher: "",
           src: "",
-          resource: ''
+          resource: ""
         });
         this.props.history.push("/");
       })
