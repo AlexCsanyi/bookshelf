@@ -73,7 +73,7 @@ export default class ShowBookDetails extends Component {
             </tr>
             <tr>
               <th scope="row">7</th>
-              <td>Read here (web address)</td>
+              <td>Read here</td>
               <td>{book.resource}</td>
             </tr>
           </tbody>
