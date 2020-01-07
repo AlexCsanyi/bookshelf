@@ -74,7 +74,11 @@ export default class ShowBookDetails extends Component {
             <tr>
               <th scope="row">7</th>
               <td>Read here</td>
-              <td>{book.resource}</td>
+              <td>
+                <a target="_blank" rel="noopener noreferrer">
+                  {book.resource}
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
