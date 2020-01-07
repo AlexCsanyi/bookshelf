@@ -28,6 +28,9 @@ const BookSchema = new mongoose.Schema({
   },
   src: {
     type: String
+  },
+  resource: {
+    type: String
   }
 });
 
