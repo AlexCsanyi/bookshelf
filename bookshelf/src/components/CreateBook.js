@@ -13,7 +13,8 @@ export default class CreateBook extends Component {
       description: "",
       published_date: "",
       publisher: "",
-      src: ""
+      src: "",
+      resource: ''
     };
   }
 
@@ -31,7 +32,8 @@ export default class CreateBook extends Component {
       description: this.state.description,
       published_date: this.state.published_date,
       publisher: this.state.publisher,
-      src: this.state.src
+      src: this.state.src,
+      resource: this.state.resource
     };
 
     axios
@@ -44,7 +46,8 @@ export default class CreateBook extends Component {
           description: "",
           published_date: "",
           publisher: "",
-          src: ""
+          src: "",
+          resource: ''
         });
         this.props.history.push("/");
       })
@@ -141,6 +144,17 @@ export default class CreateBook extends Component {
                     name="src"
                     className="form-control"
                     value={this.state.src}
+                    onChange={this.onChange}
+                  ></input>
+                </div>
+
+                <div className="form-group">
+                  <input
+                    type="text"
+                    placeholder="Link to online web address"
+                    name="resource"
+                    className="form-control"
+                    value={this.state.resource}
                     onChange={this.onChange}
                   ></input>
                 </div>

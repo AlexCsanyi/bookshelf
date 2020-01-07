@@ -26,7 +26,7 @@ export default class ShowBookDetails extends Component {
 
   onDeleteClick(id) {
     axios
-      .delete("http://localhost:8082/api/books/" + id)
+      .delete("/api/books/" + id)
       .then(res => {
         this.props.history.push("/");
       })
@@ -70,6 +70,11 @@ export default class ShowBookDetails extends Component {
               <th scope="row">6</th>
               <td>Description</td>
               <td>{book.description}</td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>Read here (web address)</td>
+              <td>{book.resource}</td>
             </tr>
           </tbody>
         </table>

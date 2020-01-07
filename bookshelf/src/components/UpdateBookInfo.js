@@ -13,7 +13,8 @@ export default class UpdateBookInfo extends Component {
       description: "",
       published_date: "",
       publisher: "",
-      src: ""
+      src: "",
+      resource: ""
     };
   }
 
@@ -28,7 +29,8 @@ export default class UpdateBookInfo extends Component {
           description: res.data.description,
           published_date: res.data.published_date,
           publisher: res.data.publisher,
-          src: res.data.src
+          src: res.data.src,
+          resource: res.data.resource
         });
       })
       .catch(err => {
@@ -50,14 +52,12 @@ export default class UpdateBookInfo extends Component {
       description: this.state.description,
       published_date: this.state.published_date,
       publisher: this.state.publisher,
-      src: this.state.src
+      src: this.state.src,
+      resource: this.state.resource
     };
 
     axios
-      .put(
-        "http://localhost:8082/api/books/" + this.props.match.params.id,
-        data
-      )
+      .put("/api/books/" + this.props.match.params.id, data)
       .then(res => {
         this.props.history.push("/show-book/" + this.props.match.params.id);
       })
@@ -164,6 +164,18 @@ export default class UpdateBookInfo extends Component {
                   name="publisher"
                   className="form-control"
                   value={this.state.publisher}
+                  onChange={this.onChange}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="resource">Read here (web address)</label>
+                <input
+                  type="text"
+                  placeholder="Link to online web address"
+                  name="resource"
+                  className="form-control"
+                  value={this.state.resource}
                   onChange={this.onChange}
                 />
               </div>
