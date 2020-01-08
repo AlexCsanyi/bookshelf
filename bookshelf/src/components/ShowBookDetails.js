@@ -75,8 +75,12 @@ export default class ShowBookDetails extends Component {
               <th scope="row">7</th>
               <td>Read here</td>
               <td>
-                <a target="_blank" rel="noopener noreferrer">
-                  {book.resource}
+                <a
+                  href={book.resource}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  You will be redirected to another website
                 </a>
               </td>
             </tr>
